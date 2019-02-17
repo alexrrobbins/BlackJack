@@ -1,5 +1,5 @@
 class Player():
-    def __init__(self, money, hand=[], amount=0, hand_value=0):
+    def __init__(self, money=0, hand=[], amount=0, hand_value=0):
         self.money = money
         self.hand = hand
         self.amount = amount
@@ -24,16 +24,16 @@ class Player():
         self.money -= self.amount
 
     #Game related methods
-    def initize_hand(self, card1, card2):
+    def initializeHand(self, card1, card2):
         self.hand = [card1, card2]
         try:
             self.hand_value = card1+card2
         except:
-            ace = input("Do you want your ace to equal 1 or 11?")
-            if (card1.isdigit()):
-                card1 = int(ace)
-            elif (card2.isdigit()):
-                card2 = int(ace)
+            ace = int(input("Do you want your ace to equal 1 or 11: "))
+            if (not card1.isdigit()):
+                card1 = ace
+            elif (not card2.isdigit()):
+                card2 = ace
             self.hand_value = card1+card2
         finally:
             return self.hand_value
