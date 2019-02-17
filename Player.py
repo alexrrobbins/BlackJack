@@ -6,12 +6,16 @@ class Player():
         self.hand_value = hand_value
 
     #Money related methods
-    def setAmount(self, bet_amount):
-        if (self.money - bet_amount < 0):
-            print("You do not have enough money for that bet!")
-        else:
-            self.amount = bet_amount
-            print("Bet placed!")
+    def setAmount(self):
+        test = True
+        while test:
+            bet_amount = float(input("Enter bet amount: "))
+            if (self.money - bet_amount < 0):
+                print("You do not have enough money for that bet!")
+            else:
+                self.amount = bet_amount
+                print("Bet placed!")
+                test = False
 
     def winGame(self):
         self.money += self.amount
