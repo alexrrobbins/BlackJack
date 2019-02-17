@@ -15,4 +15,4 @@ class Deck():
         random.shuffle(self.cards)
 
     def draw(self):
-        pass
+        return self.cards.pop(0)
