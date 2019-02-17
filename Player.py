@@ -12,7 +12,16 @@ class Player():
             print("Bet placed!")
 
     def winGame(self):
-        pass
+        self.money += self.amount
 
     def loseGame(self):
+        self.money -= self.amount
+
+    def initize_hand(self, card1, card2):
+        self.hand = [card1, card2]
+
+    def stand(self):
+        pass
+
+    def hit(self, card):
         pass
