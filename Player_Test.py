@@ -21,5 +21,13 @@ class PlayerTest(unittest.TestCase):
         result = player.hit(2)
         self.assertEqual(result,14)
 
+    def test_hit_with_ace(self):
+        player = Player()
+        ace = Ace()
+        player.initializeHand(10,2)
+        print("Please enter 1 when prompted")
+        result = player.hit(ace)
+        self.assertEqual(result,13)
+
 if __name__ == '__main__':
     unittest.main()

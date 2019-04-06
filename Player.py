@@ -48,6 +48,6 @@ class Player():
             self.hand_value = self.hand_value + card
         except:
             card.change_value()
-            self.hand_value = self.hand_value + card
+            self.hand_value = self.hand_value + card.get_value()
         finally:
             return self.hand_value
