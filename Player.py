@@ -1,3 +1,5 @@
+from Ace import Ace
+
 class Player():
     def __init__(self, money=0, hand=[], amount=0, hand_value=0):
         self.money = money
@@ -29,12 +31,12 @@ class Player():
         try:
             self.hand_value = card1+card2
         except:
-            ace = int(input("Do you want your ace to equal 1 or 11: "))
-            if (not card1.isdigit()):
-                card1 = ace
-            elif (not card2.isdigit()):
-                card2 = ace
-            self.hand_value = card1+card2
+            if type(card1) == Ace:
+                card1.change_value()
+                self.hand_value = chard1.get_value() + card2
+            else:
+                card2.change_value()
+                self.hand_value = card1 + card2.get_value()
         finally:
             return self.hand_value
 
