@@ -40,8 +40,14 @@ class Player():
         finally:
             return self.hand_value
 
-    def stand(self):
+    def stay(self):
         pass
 
     def hit(self, card):
-        pass
+        try:
+            self.hand_value = self.hand_value + card
+        except:
+            card.change_value()
+            self.hand_value = self.hand_value + card
+        finally:
+            return self.hand_value
