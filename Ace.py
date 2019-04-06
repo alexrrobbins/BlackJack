@@ -3,6 +3,9 @@ class Ace():
     def __init__(self):
         self.value = 0
 
+    def __str__(self):
+        return 'Ace'
+
     def change_value(self):
         pick = int(input("Do you want your ace to equal 1 or 11: "))
         test = True

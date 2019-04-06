@@ -40,15 +40,19 @@ class Player():
         finally:
             return self.hand_value
 
-    def stay(self):
+    def report_hand_value(self):
+        print("Player, the value of your hand is now " + str(self.hand_value))
+
+    def get_hand_value(self):
         return self.hand_value
 
     def hit(self, card):
         self.hand.append(card)
+        temp = self.hand_value
         try:
-            self.hand_value = self.hand_value + card
+            self.hand_value = temp + card
         except:
             card.change_value()
-            self.hand_value = self.hand_value + card.get_value()
+            self.hand_value = temp + card.get_value()
         finally:
             return self.hand_value
