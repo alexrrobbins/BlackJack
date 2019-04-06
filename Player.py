@@ -8,7 +8,7 @@ class Player():
         self.hand_value = hand_value
 
     #Money related methods
-    def setAmount(self):
+    def set_amount(self):
         test = True
         while test:
             bet_amount = float(input("Enter bet amount: "))
@@ -19,14 +19,14 @@ class Player():
                 print("Bet placed!")
                 test = False
 
-    def winGame(self):
+    def win_game(self):
         self.money += self.amount
 
-    def loseGame(self):
+    def lose_game(self):
         self.money -= self.amount
 
     #Game related methods
-    def initializeHand(self, card1, card2):
+    def initialize_hand(self, card1, card2):
         self.hand = [card1, card2]
         try:
             self.hand_value = card1+card2
@@ -41,9 +41,10 @@ class Player():
             return self.hand_value
 
     def stay(self):
-        pass
+        return self.hand_value
 
     def hit(self, card):
+        self.hand.append(card)
         try:
             self.hand_value = self.hand_value + card
         except:
